@@ -1,0 +1,30 @@
+term xterm
+startup_message off
+defscrollback 10000
+termcapinfo xterm* ti@:te@
+bind 'w' windowlist -b
+bind ' ' windowlist -b
+bind '+' resize max
+bind '=' resize =
+bind 'x' remove
+bind 'X' lockscreen
+bind 'o' only
+hardstatus alwayslastline "%{wk}%-w%{Gk}[%n %t]%{wk}%+w%=%{Ck}%H %D %M"
+bind 't' title
+shelltitle 'bash'
+#escape ^bb # Change the default command character from Ctrl+a to Ctrl+b
+#bind 'S' xoff
+#bind 's' split
+bind 's' command -c split_and_switch
+bind -c split_and_switch 0 eval split focus "select 0"
+bind -c split_and_switch 1 eval split focus "select 1"
+bind -c split_and_switch 2 eval split focus "select 2"
+bind -c split_and_switch 3 eval split focus "select 3"
+bind -c split_and_switch 4 eval split focus "select 4"
+bind -c split_and_switch 5 eval split focus "select 5"
+bind -c split_and_switch 6 eval split focus "select 6"
+bind -c split_and_switch 7 eval split focus "select 7"
+bind -c split_and_switch 8 eval split focus "select 8"
+bind -c split_and_switch 9 eval split focus "select 9"
+bind -c split_and_switch c eval split focus screen
+
