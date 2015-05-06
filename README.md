@@ -14,3 +14,7 @@ The following files will be setup for you.
     ~/.shared
     ~/.bashrc_local
 
+The following software will be installed.
+
+    sbt
+
