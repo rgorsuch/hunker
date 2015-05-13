@@ -4,6 +4,13 @@ echo "deb http://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.lis
 sudo apt-get update
 sudo apt-get install sbt
 
+# Install node.js
+curl -sL https://deb.nodesource.com/setup | sudo bash - && sudo apt-get install -y nodejs
+
+# Install rally-app-builder
+npm install rally-app-builder 
+sudo ln -s /home/ubuntu/node_modules/rally-app-builder/bin/rally-app-builder /usr/local/bin/rally-app-builder
+
 # Customize environment
 cp shared ~/.shared
 cp screenrc ~/.screenrc
