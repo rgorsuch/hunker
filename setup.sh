@@ -18,6 +18,14 @@ cp vimrc ~/.vimrc
 cp bashrc ~/.bashrc_local
 echo ". ~/.bashrc_local" >> ~/.bashrc
 
+# Install maven
+wget http://www.carfab.com/apachesoftware/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
+sudo mkdir -p /usr/local/apache-maven
+sudo tar xvf apache-maven-3.0.5-bin.tar.gz -C /usr/local/apache-maven
+echo 'export PATH=$PATH:/usr/local/apache-maven/apache-maven-3.0.5/bin' >>~/.bashrc_local
+echo 'export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre' >>~/.bashrc_local
+mvn --version
+
 # Suggestions
 echo "Do not forget to "
 echo
