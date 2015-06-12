@@ -16,5 +16,10 @@ The following files will be setup for you.
 
 The following software will be installed.
 
+    unzip
+    jdk7
+    maven
     sbt
+    typesafe-activator 
+    rally-app-builder
 
