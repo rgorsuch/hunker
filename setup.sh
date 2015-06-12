@@ -21,7 +21,6 @@ function apt-install {
 }
 
 apt-install unzip
-apt-install openjdk-7-jdk
 apt-install nodejs "curl -sL https://deb.nodesource.com/setup | sudo bash - && sudo apt-get install -y nodejs"
 
 # Install sbt: http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html
@@ -54,6 +53,13 @@ if ! hash activator ; then
   sudo chown -R $USER:$USER /usr/local/activator-1.3.4
   sudo ln -s /usr/local/activator-1.3.4/activator /usr/local/bin/activator
   rm -f typesafe-activator-1.3.4.zip
+fi
+
+if ! dpkg -l oracle-java8-set-default >/dev/null ; then
+  echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+  echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+  sudo apt-get update
+  sudo apt-get install oracle-java8-set-default
 fi
 
 # Customize environment
